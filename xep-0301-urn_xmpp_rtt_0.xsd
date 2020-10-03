@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<xs:schema
+        xmlns:xs='http://www.w3.org/2001/XMLSchema'
+        targetNamespace='urn:xmpp:rtt:0'
+        xmlns='urn:xmpp:rtt:0'
+        elementFormDefault='qualified'>
+
+    <xs:annotation>
+        <xs:documentation>
+            The protocol documented by this schema is defined in
+            XEP-0301: http://www.xmpp.org/extensions/xep-0301.html
+        </xs:documentation>
+    </xs:annotation>
+
+    <xs:element name='rtt'>
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element ref='t' minOccurs='0' maxOccurs='unbounded'/>
+                <xs:element ref='e' minOccurs='0' maxOccurs='unbounded'/>
+                <xs:element ref='w' minOccurs='0' maxOccurs='unbounded'/>
+            </xs:choice>
+            <xs:attribute name='seq' type='xs:unsignedInt' use='required'/>
+            <xs:attribute name='event' use='optional' default='edit'>
+                <xs:simpleType>
+                    <xs:restriction base='xs:string'>
+                        <xs:enumeration value='new'/>
+                        <xs:enumeration value='reset'/>
+                        <xs:enumeration value='edit'/>
+                        <xs:enumeration value='init'/>
+                        <xs:enumeration value='cancel'/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name='id' type='xs:string' use='optional'/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name='t' type='xs:string'>
+        <xs:complexType>
+            <xs:attribute name='p' type='xs:unsignedInt' use='optional'/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name='e' type='empty'>
+        <xs:complexType>
+            <xs:attribute name='p' type='xs:unsignedInt' use='optional'/>
+            <xs:attribute name='n' type='xs:unsignedInt' use='optional' default='1'/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name='w' type='empty'>
+        <xs:complexType>
+            <xs:attribute name='n' type='xs:unsignedInt' use='required'/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name='empty'>
+        <xs:restriction base='xs:string'>
+            <xs:enumeration value=''/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

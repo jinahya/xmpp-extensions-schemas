@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:xmpp:mamfc:0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="applied" type="mamfc:appliedType" xmlns:mamfc="urn:xmpp:mamfc:0"/>
+    <xs:complexType name="appliedType">
+        <xs:sequence>
+            <xs:any minOccurs="0" maxOccurs="1"/>
+            <!-- Fastening summary, absent when shell is true -->
+        </xs:sequence>
+        <xs:attribute type="xs:positiveInteger" name="count" default="1"/>
+        <xs:attribute type="xs:boolean" name="shell" default="false"/>
+    </xs:complexType>
+    <xs:element name="latest" type="mamfc:latestType" xmlns:mamfc="urn:xmpp:mamfc:0"/>
+    <xs:complexType name="latestType">
+        <xs:attribute type="xs:string"/>
+    </xs:complexType>
+</xs:schema>

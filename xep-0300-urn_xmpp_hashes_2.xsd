@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<xs:schema
+        xmlns:xs='http://www.w3.org/2001/XMLSchema'
+        targetNamespace='urn:xmpp:hashes:2'
+        xmlns='urn:xmpp:hashes:2'
+        elementFormDefault='qualified'>
+
+    <xs:element name='hash'>
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base='xs:base64Binary'>
+                    <xs:attribute name='algo' type='xs:NCName' use='required'/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name='hash-used'>
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base='empty'>
+                    <xs:attribute name='algo' type='xs:NCName' use='required'/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name='empty'>
+        <xs:restriction base='xs:string'>
+            <xs:enumeration value=''/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

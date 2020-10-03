@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<xs:schema
+        xmlns:xs='http://www.w3.org/2001/XMLSchema'
+        xmlns:xml='http://www.w3.org/XML/1998/namespace'
+        targetNamespace='urn:xmpp:jingle-message:0'
+        xmlns='urn:xmpp:jingle-message:0'
+        elementFormDefault='qualified'>
+
+    <xs:element name='accept'>
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base='empty'>
+                    <xs:attribute name='id' type='xs:string' use='required'/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name='proceed'>
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base='empty'>
+                    <xs:attribute name='id' type='xs:string' use='required'/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name='propose'>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:any namespace='##other' minOccurs='1' maxOccurs='unbounded'/>
+            </xs:sequence>
+            <xs:attribute name='id' type='xs:string' use='required'/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name='reject'>
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base='empty'>
+                    <xs:attribute name='id' type='xs:string' use='required'/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name='retract'>
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base='empty'>
+                    <xs:attribute name='id' type='xs:string' use='required'/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name='empty'>
+        <xs:restriction base='xs:string'>
+            <xs:enumeration value=''/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

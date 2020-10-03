@@ -1,0 +1,11 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "s": {
+            "type": "string",
+            "required": true,
+            "format": "xml"
+        }
+    }
+}

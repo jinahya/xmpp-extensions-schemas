@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<xs:schema
+        xmlns:xs='http://www.w3.org/2001/XMLSchema'
+        targetNamespace='urn:xmpp:csi:0'
+        xmlns='urn:xmpp:csi:0'
+        elementFormDefault='qualified'>
+
+    <xs:element name='csi' type='empty'/>
+    <xs:element name='active' type='empty'/>
+    <xs:element name='inactive' type='empty'/>
+
+    <xs:simpleType name='empty'>
+        <xs:restriction base='xs:string'>
+            <xs:enumeration value=''/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
