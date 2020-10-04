@@ -36,11 +36,11 @@
         <xs:attribute name='to'
                       type='xs:string'
                       use='optional'/>
-        <xs:attribute name='type' 
-                      use='optional' 
+        <xs:attribute name='type'
+                      use='optional'
                       default='normal'>
           <xs:simpleType>
-            <xs:restriction base='xs:NMTOKEN'>
+            <xs:restriction base='xs:NMTOKEN'> <!-- xjb-enum-ed -->
               <xs:enumeration value='chat'/>
               <xs:enumeration value='error'/>
               <xs:enumeration value='groupchat'/>
@@ -111,7 +111,7 @@
                     use='optional'/>
       <xs:attribute name='type' use='optional'>
         <xs:simpleType>
-          <xs:restriction base='xs:NMTOKEN'>
+          <xs:restriction base='xs:NMTOKEN'> <!-- xjb-enum-ed -->
             <xs:enumeration value='error'/>
             <xs:enumeration value='probe'/>
             <xs:enumeration value='subscribe'/>
@@ -128,7 +128,7 @@
 
   <xs:element name='show'>
     <xs:simpleType>
-      <xs:restriction base='xs:NMTOKEN'>
+      <xs:restriction base='xs:NMTOKEN'> <!-- xjb-enum-ed -->
         <xs:enumeration value='away'/>
         <xs:enumeration value='chat'/>
         <xs:enumeration value='dnd'/>
@@ -177,7 +177,7 @@
                     use='optional'/>
       <xs:attribute name='type' use='required'>
         <xs:simpleType>
-          <xs:restriction base='xs:NMTOKEN'>
+          <xs:restriction base='xs:NMTOKEN'> <!-- xjb-enum-ed -->
             <xs:enumeration value='error'/>
             <xs:enumeration value='get'/>
             <xs:enumeration value='result'/>
@@ -196,12 +196,12 @@
         <xs:element ref='err:text'
                     minOccurs='0'/>
       </xs:sequence>
-      <xs:attribute name='by' 
-                    type='xs:string' 
+      <xs:attribute name='by'
+                    type='xs:string'
                     use='optional'/>
       <xs:attribute name='type' use='required'>
         <xs:simpleType>
-          <xs:restriction base='xs:NMTOKEN'>
+          <xs:restriction base='xs:NMTOKEN'> <!-- xjb-enum-ed -->
             <xs:enumeration value='auth'/>
             <xs:enumeration value='cancel'/>
             <xs:enumeration value='continue'/>
