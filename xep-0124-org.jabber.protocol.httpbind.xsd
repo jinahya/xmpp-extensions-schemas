@@ -35,7 +35,7 @@
             <xs:attribute name='charsets' type='xs:NMTOKENS' use='optional'/>
             <xs:attribute name='condition' use='optional'>
                 <xs:simpleType>
-                    <xs:restriction base='xs:NCName'>
+                    <xs:restriction base='xs:NCName'> <!-- xjb-enum-ed -->
                         <xs:enumeration value='bad-request'/>
                         <xs:enumeration value='host-gone'/>
                         <xs:enumeration value='host-unknown'/>
@@ -71,7 +71,7 @@
             <xs:attribute name='to' type='xs:string' use='optional'/>
             <xs:attribute name='type' use='optional'>
                 <xs:simpleType>
-                    <xs:restriction base='xs:NCName'>
+                    <xs:restriction base='xs:NCName'> <!-- xjb-enum-ed -->
                         <xs:enumeration value='error'/>
                         <xs:enumeration value='terminate'/>
                     </xs:restriction>

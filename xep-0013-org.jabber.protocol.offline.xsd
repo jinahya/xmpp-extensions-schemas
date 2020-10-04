@@ -25,7 +25,7 @@
         <xs:complexType>
             <xs:attribute name='action' use='optional'>
                 <xs:simpleType>
-                    <xs:restriction base='xs:NCName'>
+                    <xs:restriction base='xs:NCName'> <!-- xjb-enum-ed -->
                         <xs:enumeration value='remove'/>
                         <xs:enumeration value='view'/>
                     </xs:restriction>
